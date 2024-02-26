@@ -5,7 +5,7 @@ async function findByName(cityName) {
 }
 
 async function findById(id) {
-    const travels = await db.query(`SELECT * FROM travels WHERE id=$1;` [id])
+    const travels = await db.query(`SELECT * FROM travels WHERE id=$1;`, [id])
     return travels.rows[0]
 }
 

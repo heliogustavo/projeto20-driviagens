@@ -1,11 +1,12 @@
+import httpStatus from "http-status"
+import { travelsService } from "../services/travelsService.js"
 
 async function create(req, res) {
+    const {passengerId, flightId} = req.body
 
-    try {
-
-    } catch (err) {
-        res.status(500).send(err.message)
-    }
+    await travelsService.create(passengerId, flightId)
+    res.sendStatus(httpStatus.CREATED)    
+    
 }
 
-export const travelController = { create }
+export const    travelController = { create }

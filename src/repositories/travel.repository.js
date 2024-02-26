@@ -8,9 +8,10 @@ async function findById(id) {
 
 }
 
-async function create(cityName) {
+async function create(passengerId, flightId) {
+    await db.query(`INSERT INTO travels ("passengerId", "flightId") VALUES ($1, $2);`, [passengerId, flightId])
 
 }
 
 
-export const cityRepository = { findByName, findById, create}
+export const travelsRepository = { findByName, findById, create}
