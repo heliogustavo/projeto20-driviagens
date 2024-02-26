@@ -1,11 +1,11 @@
-import { cityService } from "../services/cityService"
+import httpStatus from "http-status"
+import { cityService } from "../services/cityService.js"
 async function create(req, res) {
+    const {name}= req.body
 
-    try {
+    await cityService.create(name)
 
-    } catch (err) {
-        res.status(500).send(err.message)
-    }
+    res.sendStatus(httpStatus.CREATED)
 }
 
 export const cityController = { create }
