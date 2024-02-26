@@ -1,7 +1,7 @@
 import { Router } from "express"
-import { travelController } from "../controllers/travel.controller.js"
 import { validateSchema } from "../middlewares/validateSchema.js"
-import { travelSchema } from "../schemas/travel.schemas.js"
+import { travelSchema } from "../schemas/travelSchema.js"
+import { travelController } from "../controllers/travelController.js"
 
 const travelRouter = Router()
 
